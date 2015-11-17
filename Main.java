@@ -12,5 +12,14 @@ public class Main {
         thread.start();
         anotherThread.start();
 
+        try{
+            thread.join();
+            anotherThread.join();
+        }
+        catch(InterruptedException e){
+            System.out.println("Поток прерван");
+        }
+
+        System.out.println("Финальное значение " + Demo.count);
 }
 }
